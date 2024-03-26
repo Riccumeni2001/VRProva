@@ -1,8 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using Unity.XR.CoreUtils.Datums;
 using UnityEngine;
 
 public enum VelocityCase{
@@ -14,9 +10,7 @@ public enum VelocityCase{
 public class TargetController : MonoBehaviour
 {
     public static event Action<VelocityCase> onTargetTrigger;
-    private float time = 0f;
     private bool reverse = false;
-
     public float start = 0f;
     public float end = 0f;
 

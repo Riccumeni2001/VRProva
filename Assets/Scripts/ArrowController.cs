@@ -38,7 +38,7 @@ public class ArrowController : MonoBehaviour
             
             Rigidbody rb = transform.Find("BowArrow").GetComponent<Rigidbody>();
 
-            rb.AddForce(child.forward * 150f);
+            rb.AddForce(child.forward * 200f);
 
             StartCoroutine(wait());
         }

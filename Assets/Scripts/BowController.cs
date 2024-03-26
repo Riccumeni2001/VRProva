@@ -18,7 +18,5 @@ public class BowController : MonoBehaviour
     {
         transform.position = leftController.transform.position;
         transform.rotation = leftController.transform.rotation;
-
-        
     }
 }

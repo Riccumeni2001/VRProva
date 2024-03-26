@@ -21,16 +21,4 @@ public class ThrowZoneController : MonoBehaviour
             Debug.Log("Is not in zone");
         }
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
