@@ -11,14 +11,12 @@ public class ThrowZoneController : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if(other.tag == "arrow"){
             isInZone = true;
-            Debug.Log("Is in zone");
         }
     }
 
     void OnTriggerExit(Collider other){
         if(other.tag == "arrow"){
             isInZone = false;
-            Debug.Log("Is not in zone");
         }
     }
 }
