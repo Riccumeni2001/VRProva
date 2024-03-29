@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7070562575827566375}
   - component: {fileID: 3052490945422682039}
   - component: {fileID: 1007298832135963692}
+  - component: {fileID: 693692353417139642}
   m_Layer: 0
   m_Name: BowArrow
   m_TagString: arrow
@@ -133,6 +134,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &693692353417139642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486916525505458184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c377d013205c14b9549daf7d706203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7200005610848364877
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +301,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7200005610848364877}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9405f861b2bd3e0478201570945ae9a6, type: 3}
   m_Name: 

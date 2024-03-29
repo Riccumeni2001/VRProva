@@ -8,11 +8,11 @@ public class Points{
     public int points;
 
     public Points(float distance, VelocityCase difficulty){
-        points = calculatePoints(distance);
+        int gainedPoints = calculatePoints(distance);
 
         int pointsMultiplier = getPointsMultiplierByDifficulty(difficulty);
 
-        points *= pointsMultiplier;
+        points = gainedPoints * pointsMultiplier;
     }
     
     private int calculatePoints(float distance){
@@ -104,6 +104,8 @@ public class PointsManager : MonoBehaviour{
 
         Points points = new Points(distance, difficulty);
 
-        onPointsAdded?.Invoke(points.points);
+        this.points += points.points;
+
+        onPointsAdded?.Invoke(this.points);
     }
 }

@@ -22,7 +22,6 @@ public class TargetController : MonoBehaviour
     
     void OnCollisionEnter(Collision collision){
         if(collision.collider.tag == "arrow"){
-            Debug.Log("Collisione");
             Rigidbody rbColl = collision.collider.GetComponent<Rigidbody>();
             rbColl.velocity = Vector3.zero;
             rbColl.angularVelocity = Vector3.zero;

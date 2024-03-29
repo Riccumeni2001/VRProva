@@ -28,6 +28,8 @@ public class ArrowController : MonoBehaviour
     {
         if(!isShoot){
             if(arrowPivot != null){
+                Rigidbody rb = arrowPivot.transform.Find("BowArrow").GetComponent<Rigidbody>();
+                rb.isKinematic = true;
                 if(arrowPivot.GetComponent<XRSimpleInteractable>().isSelected){
                     arrowPivot.transform.position = new Vector3(rightHand.transform.position.x , rightHand.transform.position.y, rightHand.transform.position.z);
                     arrowPivot.transform.rotation = rightHand.transform.rotation;
@@ -45,11 +47,15 @@ public class ArrowController : MonoBehaviour
             isShoot = true;
 
             Transform child = arrowPivot.transform.Find("BowArrow").transform;
+
+            child.rotation = bow.transform.rotation;
             
             Rigidbody rb = arrowPivot.transform.Find("BowArrow").GetComponent<Rigidbody>();
+            rb.isKinematic = false;
 
             rb.AddForce(child.forward * 200f);
             rb.useGravity = true;
+            rb.angularVelocity = Vector3.zero;
 
             StartCoroutine(respawn());
         }
@@ -65,21 +71,5 @@ public class ArrowController : MonoBehaviour
         arrowPivot.GetComponent<XRSimpleInteractable>().onSelectExited.AddListener(shoot);
 
         isShoot = false;
-    }
-
-    private IEnumerator wait(){
-        yield return new WaitForSeconds(1.5f);
-
-
-        Rigidbody rb = transform.Find("BowArrow").GetComponent<Rigidbody>();
-
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-
-        isShoot = false;
-
-        transform.Find("BowArrow").transform.position = transform.position;
-        transform.Find("BowArrow").transform.rotation = transform.rotation;
-
     }
 }
